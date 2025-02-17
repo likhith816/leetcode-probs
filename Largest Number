@@ -1,0 +1,13 @@
+class Solution(object):
+    def largestNumber(self, nums):
+        if sum(nums)==0:
+            return "0"
+        for i in range(len(nums)):
+            for j in range(len(nums)):
+                k=str(nums[i])+str(nums[j])
+                m=str(nums[j])+str(nums[i])
+                if int(k)>int(m):
+                    nums[i],nums[j]=nums[j],nums[i]
+        
+        x=''.join(map(str,nums))
+        return x
